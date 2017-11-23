@@ -1,7 +1,8 @@
 #ifndef ALBUMDAO_H
 #define ALBUMDAO_H
 #include "album.h"
-#include <QVector>
+#include <memory>
+#include <vector>
 // before declare avoid out app to add qt:sql
 class QSqlDatabase;
 
@@ -35,7 +36,7 @@ public:
    * @brief albums get all albums in the table or empty vector
    * @return vector of all album in table
    */
-  QVector<Album *> albums() const;
+  std::unique_ptr<std::vector<std::unique_ptr<Album>>> albums() const;
 
   /**
    * @brief init aims to create album table when database is opened
