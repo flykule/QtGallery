@@ -28,18 +28,26 @@ SOURCES += \
         mainwindow.cpp \
     albumlistwidget.cpp \
     thumbnailproxymodel.cpp \
-    albumwidget.cpp
+    albumwidget.cpp \
+    picturedelegate.cpp \
+    picturewidget.cpp \
+    gallerywidget.cpp
 
 HEADERS += \
         mainwindow.h \
     albumlistwidget.h \
     thumbnailproxymodel.h \
-    albumwidget.h
+    albumwidget.h \
+    picturedelegate.h \
+    picturewidget.h \
+    gallerywidget.h
 
 FORMS += \
         mainwindow.ui \
     albumlistwidget.ui \
-    albumwidget.ui
+    albumwidget.ui \
+    picturewidget.ui \
+    gallerywidget.ui
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../gallery-core/release/ -lgallery-core
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../gallery-core/debug/ -lgallery-core

@@ -5,12 +5,15 @@
 #include <QInputDialog>
 
 #include "albummodel.h"
+#include "picturedelegate.h"
 #include "picturemodel.h"
 #include "thumbnailproxymodel.h"
 #include <QItemSelectionModel>
 
 AlbumWidget::AlbumWidget(QWidget *parent)
-    : QWidget(parent), ui(new Ui::AlbumWidget) {
+    : QWidget(parent), ui(new Ui::AlbumWidget), mAlbumModel(nullptr),
+      mAlbumSelectionModel(nullptr), mPictureModel(nullptr),
+      mPictureSelectionModel(nullptr) {
   ui->setupUi(this);
   clearUi();
 
@@ -18,6 +21,7 @@ AlbumWidget::AlbumWidget(QWidget *parent)
   ui->thumbnailListView->setResizeMode(QListView::Adjust);
   ui->thumbnailListView->setFlow(QListView::LeftToRight);
   ui->thumbnailListView->setWrapping(true);
+  ui->thumbnailListView->setItemDelegate(new PictureDelegate(this));
 
   connect(ui->thumbnailListView, &QListView::doubleClicked, this,
           &AlbumWidget::pictureActivated);
