@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AlbumWidget</class>
+ <widget class="QWidget" name="AlbumWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>475</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QListView" name="thumbnailListView">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>451</width>
+     <height>241</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QFrame" name="albumInfoFrame">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>447</width>
+     <height>54</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="albumName">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="addButton">
+      <property name="text">
+       <string>Add pictures</string>
+      </property>
+      <property name="icon">
+       <iconset resource="res/resource.qrc">
+        <normaloff>:/icons/photo-add.png</normaloff>:/icons/photo-add.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="editButton">
+      <property name="text">
+       <string>Edit</string>
+      </property>
+      <property name="icon">
+       <iconset resource="res/resource.qrc">
+        <normaloff>:/icons/album-edit.png</normaloff>:/icons/album-edit.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="deleteButton">
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset resource="res/resource.qrc">
+        <normaloff>:/icons/album-delete.png</normaloff>:/icons/album-delete.png</iconset>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="res/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

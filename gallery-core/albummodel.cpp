@@ -9,7 +9,7 @@ QModelIndex AlbumModel::addAlbum(const Album &album) {
   beginInsertRows(QModelIndex(), rowIndex, rowIndex);
   unique_ptr<Album> newAlbum(new Album(album));
   mDb.albumDao.addAlbum(*newAlbum);
-  mAlbums->emplace_back(newAlbum);
+  mAlbums->emplace_back(move(newAlbum));
   endInsertRows();
   return index(rowIndex, 0);
 }
@@ -29,8 +29,8 @@ QVariant AlbumModel::data(const QModelIndex &index, int role) const {
   case Roles::IdRole:
     return album.id();
   case Roles::NameRole:
-  case Roles::DIsplayRole:
-    return album.name;
+  case Qt::DisplayRole:
+    return album.name();
   default:
     return QVariant();
   }
@@ -43,7 +43,7 @@ bool AlbumModel::removeRows(int row, int count, const QModelIndex &parent) {
   beginRemoveRows(parent, row, row + count - 1);
   int countLeft = count;
   while (countLeft--) {
-    const Album &album = *mAlbums->at(index.row());
+    const Album &album = *mAlbums->at(countLeft + row);
     mDb.albumDao.removeAlbum(album.id());
   }
   mAlbums->erase(mAlbums->begin() + row, mAlbums->begin() + row + count);
@@ -59,7 +59,7 @@ bool AlbumModel::setData(const QModelIndex &index, const QVariant &value,
   Album &album = *mAlbums->at(index.row());
   album.setName(value.toString());
   mDb.albumDao.updateAlbum(album);
-  emit dataChanged();
+  emit dataChanged(index, index);
   return true;
 }
 

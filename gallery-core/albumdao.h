@@ -1,7 +1,6 @@
 #ifndef ALBUMDAO_H
 #define ALBUMDAO_H
 #include "album.h"
-#include <QVector>
 #include <memory>
 #include <vector>
 // before declare avoid out app to add qt:sql
