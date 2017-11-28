@@ -24,18 +24,13 @@ public:
 
   void setPictureSelectionModel(QItemSelectionModel *pictureSelectionModel);
 
-  void setListWidget(AlbumListWidget *listWidget);
+  Ui::GalleryWidget *getUi() const;
 
-  void setAlbum(AlbumWidget *album);
-
-  AlbumListWidget *listWidget() const;
-
-  AlbumWidget *album() const;
+signals:
+  void pictureActivated(const QModelIndex &index);
 
 private:
   Ui::GalleryWidget *ui;
-  AlbumListWidget *mListWidget;
-  AlbumWidget *mAlbum;
 };
 
 #endif // GALLERYWIDGET_H

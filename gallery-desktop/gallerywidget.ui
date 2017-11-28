@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1057</width>
+    <height>676</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,20 +16,20 @@
   <widget class="AlbumListWidget" name="albumListWidget" native="true">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>10</y>
-     <width>191</width>
-     <height>281</height>
+     <x>0</x>
+     <y>0</y>
+     <width>529</width>
+     <height>676</height>
     </rect>
    </property>
   </widget>
   <widget class="AlbumWidget" name="albumWidget" native="true">
    <property name="geometry">
     <rect>
-     <x>209</x>
-     <y>9</y>
-     <width>181</width>
-     <height>281</height>
+     <x>529</x>
+     <y>0</y>
+     <width>529</width>
+     <height>676</height>
     </rect>
    </property>
   </widget>
