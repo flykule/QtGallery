@@ -33,7 +33,7 @@ QVariant PictureModel::data(const QModelIndex &index, int role) const {
 
   switch (role) {
   case PictureRole::FilePathRole:
-    return picture.fileUrl();
+    return picture.fileUrl().toLocalFile();
   default:
     return QVariant();
   }

@@ -59,7 +59,7 @@ void AlbumWidget::setAlbumSelectionModel(
 
 void AlbumWidget::setPictureModel(ThumbnailProxyModel *pictureModel) {
   mPictureModel = pictureModel;
-  ui->thumbnailListView->setModel(mPictureModel);
+  ui->thumbnailListView->setModel(pictureModel);
 }
 
 void AlbumWidget::setPictureSelectionModel(
@@ -104,7 +104,7 @@ void AlbumWidget::editAlbum() {
 
 void AlbumWidget::addPictures() {
   QStringList filenames = QFileDialog::getOpenFileNames(
-      this, "Add pictures", QDir::homePath(), "Picture files(*.jpg,*.png");
+      this, "Add pictures", QDir::homePath(), "Picture files (*.jpg *.png)");
   if (!filenames.isEmpty()) {
     QModelIndex lastModelIndex;
     for (auto filename : filenames) {

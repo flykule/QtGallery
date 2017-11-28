@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
   thumbnailModel->setSourceModel(pictureModel);
 
   QItemSelectionModel *pictureSelectionModel =
-      new QItemSelectionModel(pictureModel, this);
+      new QItemSelectionModel(thumbnailModel, this);
 
   mGalleryWidget->setPictureModel(thumbnailModel);
   mGalleryWidget->setPictureSelectionModel(pictureSelectionModel);
@@ -34,8 +34,8 @@ MainWindow::MainWindow(QWidget *parent)
 
   connect(mGalleryWidget, &GalleryWidget::pictureActivated, this,
           &MainWindow::displayPicture);
-  connect(mPictureWidget, &PictureWidget::backToGallery, this,
-          &MainWindow::displayGallery);
+  //  connect(mPictureWidget, &PictureWidget::backToGallery, this,
+  //          &MainWindow::displayGallery);
 
   mStackedWidget->addWidget(mGalleryWidget);
   //  mStackedWidget->addWidget(mPictureWidget);

@@ -1,7 +1,8 @@
 #include "thumbnailproxymodel.h"
 #include "picturemodel.h"
+#include <QDebug>
 
-const unsigned int THUMBNAIL_SIZE = 30;
+const unsigned int THUMBNAIL_SIZE = 350;
 ThumbnailProxyModel::ThumbnailProxyModel(QObject *parent)
     : QIdentityProxyModel(parent), mThumbnails() {}
 

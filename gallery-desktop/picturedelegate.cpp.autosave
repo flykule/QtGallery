@@ -25,6 +25,7 @@ void PictureDelegate::paint(QPainter *painter,
   QColor bannerColor = QColor(BANNER_COLOR);
   bannerColor.setAlpha(BANNER_ALPHA);
   painter->fillRect(bannerRect, bannerColor);
+  
 
   QString filename = index.model()
                          ->data(index, PictureModel::PictureRole::FilePathRole)
