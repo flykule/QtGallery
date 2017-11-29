@@ -4,6 +4,7 @@
 #include <memory>
 #include <picture.h>
 #include <vector>
+
 class QSqlDatabase;
 class Picture;
 /**

@@ -13,25 +13,20 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="AlbumListWidget" name="albumListWidget" native="true">
+  <widget class="QSplitter" name="splitter">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>209</width>
+     <width>882</width>
      <height>676</height>
     </rect>
    </property>
-  </widget>
-  <widget class="AlbumWidget" name="albumWidget" native="true">
-   <property name="geometry">
-    <rect>
-     <x>209</x>
-     <y>0</y>
-     <width>673</width>
-     <height>676</height>
-    </rect>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
    </property>
+   <widget class="AlbumListWidget" name="albumListWidget" native="true"/>
+   <widget class="AlbumWidget" name="albumWidget" native="true"/>
   </widget>
  </widget>
  <customwidgets>

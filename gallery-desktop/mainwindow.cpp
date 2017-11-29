@@ -9,6 +9,7 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow),
+      mPictureWidget(new PictureWidget(this)),
       mGalleryWidget(new GalleryWidget(this)),
       mStackedWidget(new QStackedWidget(this)) {
 
@@ -29,16 +30,16 @@ MainWindow::MainWindow(QWidget *parent)
 
   mGalleryWidget->setPictureModel(thumbnailModel);
   mGalleryWidget->setPictureSelectionModel(pictureSelectionModel);
-  //  mPictureWidget->setModel(thumbnailModel);
-  //  mPictureWidget->setSelectionModel(pictureSelectionModel);
+  mPictureWidget->setModel(thumbnailModel);
+  mPictureWidget->setSelectionModel(pictureSelectionModel);
 
   connect(mGalleryWidget, &GalleryWidget::pictureActivated, this,
           &MainWindow::displayPicture);
-  //  connect(mPictureWidget, &PictureWidget::backToGallery, this,
-  //          &MainWindow::displayGallery);
+  connect(mPictureWidget, &PictureWidget::backToGallery, this,
+          &MainWindow::displayGallery);
 
   mStackedWidget->addWidget(mGalleryWidget);
-  //  mStackedWidget->addWidget(mPictureWidget);
+  mStackedWidget->addWidget(mPictureWidget);
   displayGallery();
 
   setCentralWidget(mStackedWidget);

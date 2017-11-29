@@ -19,7 +19,7 @@
      <x>10</x>
      <y>0</y>
      <width>581</width>
-     <height>511</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -28,7 +28,7 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -50,14 +50,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="pictureLabel">
+      <widget class="QLabel" name="nameLabel">
        <property name="text">
         <string>lorem ipsum.jpg</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="backButton_2">
+      <widget class="QPushButton" name="previousButton">
        <property name="text">
         <string/>
        </property>
@@ -104,6 +104,19 @@
      </item>
     </layout>
    </widget>
+  </widget>
+  <widget class="QLabel" name="pictureLabel">
+   <property name="geometry">
+    <rect>
+     <x>16</x>
+     <y>85</y>
+     <width>571</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
   </widget>
  </widget>
  <resources>
