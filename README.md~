@@ -4,5 +4,3 @@
 ## 说明:此仓库使用Qt+MOC的架构实现一个跨平台的图库．
 ##桌面UI架构:
 ![](http://obip31jcs.bkt.clouddn.com/17-11-24/59096195.jpg)
-##移动UI架构:
-![](http://obip31jcs.bkt.clouddn.com/17-12-4/70237195.jpg)
