@@ -20,6 +20,10 @@ QModelIndex PictureModel::addPicture(const Picture &picture) {
   return index(rowIndex, 0);
 }
 
+void PictureModel::addPictureFromUrl(const QString &url) {
+  addPicture(Picture(url));
+}
+
 int PictureModel::rowCount(const QModelIndex &parent) const {
   return mPictures->size();
 }

@@ -24,6 +24,8 @@ public:
 
   QModelIndex addAlbum(const Album &album);
 
+  Q_INVOKABLE void addAlbumFromName(const QString &name);
+
   // QAbstractItemModel interface
   int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 

@@ -4,6 +4,7 @@
 #include <QQuickView>
 
 #include "albummodel.h"
+#include "pictureimageprovider.h"
 #include "picturemodel.h"
 
 int main(int argc, char *argv[]) {
@@ -17,8 +18,11 @@ int main(int argc, char *argv[]) {
   QQmlContext *context = engine.rootContext();
   context->setContextProperty("albumModel", &albumModel);
   context->setContextProperty("pictureModel", &pictureModel);
+  context->setContextProperty("thumbnailSize",
+                              PictureImageProvider::THUMBNAIL_SIZE.width());
 
-  engine.load(QUrl(QLatin1String("qrc:/main.qml")));
+  engine.addImageProvider("pictures", new PictureImageProvider(&pictureModel));
+  engine.load(QUrl(QLatin1String("qrc:/qml/main.qml")));
   if (engine.rootObjects().isEmpty())
     return -1;
 
