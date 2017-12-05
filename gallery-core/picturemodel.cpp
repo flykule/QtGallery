@@ -36,6 +36,10 @@ QVariant PictureModel::data(const QModelIndex &index, int role) const {
   const Picture &picture = *mPictures->at(index.row());
 
   switch (role) {
+  case Qt::DisplayRole:
+    return picture.fileUrl().fileName();
+  case PictureRole::UrlRole:
+    return picture.fileUrl();
   case PictureRole::FilePathRole:
     return picture.fileUrl().toLocalFile();
   default:
@@ -56,6 +60,14 @@ bool PictureModel::removeRows(int row, int count, const QModelIndex &parent) {
   mPictures->erase(mPictures->begin() + row, mPictures->begin() + row + count);
   endRemoveRows();
   return true;
+}
+
+QHash<int, QByteArray> PictureModel::roleNames() const {
+  QHash<int, QByteArray> roles;
+  roles[Qt::DisplayRole] = "name";
+  roles[PictureRole::FilePathRole] = "filepath";
+  roles[PictureRole::UrlRole] = "url";
+  return roles;
 }
 
 void PictureModel::setAlbumId(int albumId) {

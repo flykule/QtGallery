@@ -20,7 +20,7 @@ Dialog {
         Qt.inputMethod.hide();
     }
     Rectangle{
-//        implicitWidth: parent.width
+        implicitWidth: parent.width
         implicitHeight: 100
         ColumnLayout{
             Text{

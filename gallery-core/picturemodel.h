@@ -16,7 +16,7 @@ class AlbumModel;
 class GALLERYCORESHARED_EXPORT PictureModel : public QAbstractListModel {
   Q_OBJECT
 public:
-  enum PictureRole { FilePathRole = Qt::UserRole + 1 };
+  enum PictureRole { FilePathRole = Qt::UserRole + 1, UrlRole };
   PictureModel(const AlbumModel &albumModel, QObject *parent = 0);
 
   QModelIndex addPicture(const Picture &picture);
@@ -27,6 +27,8 @@ public:
   QVariant data(const QModelIndex &index, int role) const override;
 
   bool removeRows(int row, int count, const QModelIndex &parent) override;
+
+  QHash<int, QByteArray> roleNames() const override;
 
   Q_INVOKABLE void setAlbumId(int albumId);
 

@@ -26,12 +26,18 @@ public:
 
   Q_INVOKABLE void addAlbumFromName(const QString &name);
 
+  Q_INVOKABLE void rename(int row, const QString &name);
+
+  Q_INVOKABLE bool deleteAlbum(int row);
+
   // QAbstractItemModel interface
   int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
   QVariant data(const QModelIndex &index, int role) const override;
 
-  bool removeRows(int row, int count, const QModelIndex &parent) override;
+  Q_INVOKABLE bool
+  removeRows(int row, int count,
+             const QModelIndex &parent = QModelIndex()) override;
 
   bool setData(const QModelIndex &index, const QVariant &value,
                int role) override;

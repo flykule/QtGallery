@@ -15,5 +15,6 @@
         <file>qml/InputDialog.qml</file>
         <file>qml/AlbumPage.qml</file>
         <file>qml/qmldir</file>
+        <file>qml/PicturePage.qml</file>
     </qresource>
 </RCC>

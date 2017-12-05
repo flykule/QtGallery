@@ -18,6 +18,14 @@ void AlbumModel::addAlbumFromName(const QString &name) {
   addAlbum(Album(name));
 }
 
+void AlbumModel::rename(int row, const QString &name) {
+  setData(index(row), name, Roles::NameRole);
+}
+
+bool AlbumModel::deleteAlbum(int row) {
+  return removeRows(row, 1, QModelIndex());
+}
+
 int AlbumModel::rowCount(const QModelIndex &parent) const {
   return mAlbums->size();
 }

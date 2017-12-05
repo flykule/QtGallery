@@ -25,7 +25,7 @@ Page {
                 Layout.fillWidth: true
                 color:Style.text
                 elide:Text.ElideRight
-                font.pointSize: 30
+                font.pointSize: 20
             }
             Loader{
                 Layout.alignment: Qt.AlignRight
